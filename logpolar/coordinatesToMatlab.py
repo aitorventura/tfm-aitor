@@ -6,13 +6,13 @@ f = open('data.json', )
 data = json.loads(f.read())
 
 diccionario = dict()
-for img in range(1001, 1003):
+for img in range(1001, 1002):
     diccionario[img] = []
 
 values = data["values"]
-for val in range(0, len(values)):
+for val in range(1, len(values)):
     images = values[val]["images"]
-    for img in range(1001, 1003):
+    for img in range(1001, 1002):
         if (images[img - 1001]["id"]) == img:
             array_x = []
             array_y = []
@@ -28,7 +28,7 @@ for val in range(0, len(values)):
             diccionario[img] = L
 
 
-for img in range(1001, 1003):
+for img in range(1001, 1002):
     L = diccionario[img]
     FrameStack = np.empty((len(L),), dtype=object)
     for i in range(len(L)):

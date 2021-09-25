@@ -29,7 +29,7 @@ if __name__ == "__main__":
     #   23/3/21
     bColor = True
     if bColor:
-        imfile = 'images640x480/1001Mouse.jpg'
+        imfile = 'images800x600/1001Mouse.jpg'
     else:
         imfile = 'lena.pgm'
 
@@ -51,12 +51,12 @@ if __name__ == "__main__":
     images = dict()
     array_images = []
 
-    for i in range(1001, 1003):
+    for i in range(1001, 1002):
         print(array_images)
         img = dict()
         coordinates = []
 
-        imfile = 'images640x480/{0}.jpg'.format(i)
+        imfile = 'images800x600/{0}.jpg'.format(i)
         print(imfile)
         im_pil = Image.open(imfile)  # .convert('L')
         im = np.array(im_pil)

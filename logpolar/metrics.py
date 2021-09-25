@@ -72,14 +72,30 @@ def show_map(map,title):
     plt.show(block=True)
 
 if __name__ == "__main__":
-    mat = scipy.io.loadmat('1001.mat')
-    b_gtrue = mat['fixationPts']
-    show_map(b_gtrue, 'fixations (binary)')
+    images_to_evaluate = "1001#1012#1018#1026#1036#1057#1067#1098#1102#1104#1131#1163#1274#1278#1299#1375#1385#1409" \
+                         "#1499#1501#1663"
 
-    imfile = '1001.jpg'
-    d_pred = Image.open(imfile).convert('L')
-    show_map(d_pred, 'saliency map')
+    folders = ['log-polar', 'mouse_amt', 'mouse_lab']
+    images_to_evaluate = images_to_evaluate.split("#")
 
+    for folder in folders:
+        aucs = []
+        for image in images_to_evaluate:
+            mat = scipy.io.loadmat('fixation_maps/{0}.mat'.format(image))
+            b_gtrue = mat['fixationPts']
+            # show_map(b_gtrue, 'fixations (binary)')
+
+            imfile = 'mouse_maps/{1}/{0}.jpg'.format(image, folder)
+            d_pred = Image.open(imfile).convert('L')
+            # show_map(d_pred, 'saliency map')
+
+            aucs.append(AUC(b_gtrue, d_pred, bDisplay=False))
+
+        print(folder)
+        print(sum(aucs)/len(aucs))
+
+    #0.8538736238403599 SALICON
+    #0.8570071469427951 LOG-POLAR
 
 
 

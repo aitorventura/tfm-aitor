@@ -38,6 +38,11 @@ if __name__ == "__main__":
 
     f = open('data.json', )
 
+    images_to_evaluate = "1001#1012#1018#1026#1036#1057#1067#1098#1102#1104#1131#1163#1274#1278#1299#1375#1385#1409" \
+                         "#1499#1501#1663"
+
+    images_to_evaluate = images_to_evaluate.split("#")
+
     try:
         data = json.loads(f.read())
         values = data['values']
@@ -51,7 +56,7 @@ if __name__ == "__main__":
     images = dict()
     array_images = []
 
-    for i in range(1001, 1002):
+    for i in images_to_evaluate:
         print(array_images)
         img = dict()
         coordinates = []
@@ -84,7 +89,7 @@ if __name__ == "__main__":
         while True:
             if cv2.waitKey(15) & 0xFF == 27:
                 break
-            if 237 <= pos_y <= 242 and 317 <= pos_x <= 322:
+            if 297 <= pos_y <= 303 and 397 <= pos_x <= 403:
                 break
 
         initial_time = time.time()

@@ -12,6 +12,7 @@ global pos_x
 global pos_y
 global coordinates
 
+
 def move(event, x, y, flags, param):
     # grab references to the global variables
     global pos_x
@@ -23,6 +24,7 @@ def move(event, x, y, flags, param):
         pos_x = x
         pos_y = y
         coordinates.append([pos_x, pos_y])
+
 
 if __name__ == "__main__":
     # test_generalLP()
@@ -36,7 +38,7 @@ if __name__ == "__main__":
     print("¿Cómo te llamas?")
     name = input()
 
-    f = open('data.json', )
+    f = open('test.json', )
 
     images_to_evaluate = "1001#1012#1018#1026#1036#1057#1067#1098#1102#1104#1131#1163#1274#1278#1299#1375#1385#1409" \
                          "#1499#1501#1663"
@@ -73,7 +75,10 @@ if __name__ == "__main__":
             C = 1
 
         rho0 = 5.0
-        R, S = 90, 60
+        R, S = 80, 60
+
+        #rho0 = 4.0
+        #R, S = 140, 90
         rhoMax = min(M, N) / 2
 
         pos_x = 0
@@ -137,9 +142,9 @@ if __name__ == "__main__":
 
     data['values'] = values
 
-    with open('data.json', 'w') as my_file:
+    with open('test.json', 'w') as my_file:
         json.dump(data, my_file)
 
-    f = open('data.json', )
+    f = open('test.json', )
     dict = json.loads(f.read())
     print(dict)

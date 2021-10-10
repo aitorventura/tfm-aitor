@@ -7,7 +7,6 @@ import numpy as np
 import time
 
 from logpolar.logPolarFunction import GenLogPolar
-
 global pos_x
 global pos_y
 global coordinates
@@ -53,7 +52,7 @@ def show_image(image, array_images, R, S):
 
     initial_time = time.time()
 
-    while time.time() - initial_time < 10:
+    while time.time() - initial_time < 5:
         GLP = GenLogPolar(M, N, pos_x, pos_y, rho0, R, S, rhoMax)
 
         lp_im = np.zeros((R, S, C))

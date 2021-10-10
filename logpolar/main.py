@@ -99,9 +99,6 @@ def move(event, x, y, flags, param):
 
 
 if __name__ == "__main__":
-    # test_generalLP()
-    #   23/3/21
-
     images_to_test = "1001#1002#1003#1004#1005#1006#1007#1008#1010#1011"
 
     images_to_test = images_to_test.split("#")

@@ -82,7 +82,7 @@ if __name__ == "__main__":
     images_to_evaluate = "1009#1026#1092#1093#1094#1097#1144#1159#1164#1278#1387#1408#1409#1414#1442#1471#1527#1572" \
                          "#1585#1617"
 
-    folders = ['log-polar', 'mouse_amt', 'mouse_lab']
+    folders = ['log-polar-high-quality', 'log-polar-low-quality', 'mouse_amt', 'mouse_lab']
 
     images_to_evaluate = images_to_evaluate.split("#")
     categories = {'big_objects': ['1585', '1009', '1026', '1144', '1097', '1094', '1617', '1408', '1442'],

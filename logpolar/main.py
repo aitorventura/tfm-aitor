@@ -102,11 +102,12 @@ if __name__ == "__main__":
     # test_generalLP()
     #   23/3/21
 
-    images_to_test = "1001#1012"
+    images_to_test = "1001#1002#1003#1004#1005#1006#1007#1008#1010#1011"
 
     images_to_test = images_to_test.split("#")
 
-    images_to_evaluate = "1018#1026"
+    images_to_evaluate = "1009#1026#1092#1093#1094#1097#1144#1159#1164#1278#1387#1408#1409#1414#1442#1471#1527#1572" \
+                         "#1585#1617"
 
     images_to_evaluate = images_to_evaluate.split("#")
 

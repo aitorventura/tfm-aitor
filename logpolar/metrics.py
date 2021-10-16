@@ -79,6 +79,8 @@ def show_map(map, title):
 
 
 if __name__ == "__main__":
+    f = open("results.txt", "a")
+    f.write("Results:\n")
     images_to_evaluate = "1009#1026#1092#1093#1094#1097#1144#1159#1164#1278#1387#1408#1409#1414#1442#1471#1527#1572" \
                          "#1585#1617"
 
@@ -106,13 +108,13 @@ if __name__ == "__main__":
 
             aucs.append(AUC(b_gtrue, d_pred, bDisplay=False))
 
-        print("Para todo:")
-        print(folder)
-        print(sum(aucs) / len(aucs))
+        f.write("Total:\n")
+        f.write(folder + "\n")
+        f.write(str(sum(aucs) / len(aucs)) + "\n")
 
-        print("")
-        print("Por categoría:")
-        print(folder)
+        f.write("" + "\n")
+        f.write("Por categoría:" + "\n")
+        f.write(folder + "\n")
         for category in categories:
             aucs = []
             for im in categories[category]:
@@ -126,13 +128,14 @@ if __name__ == "__main__":
 
                 aucs.append(AUC(b_gtrue, d_pred, bDisplay=False))
 
-            print(category)
-            print(sum(aucs) / len(aucs))
+            f.write(category + "\n")
+            f.write(str(sum(aucs) / len(aucs)) + "\n")
 
-        print("")
-        print("")
-        print("")
-        print("")
+        f.write("\n")
+        f.write("\n")
+        f.write("\n")
+        f.write("\n")
+    f.close()
     # h,w=100,150
     # n=150
     # pct=30

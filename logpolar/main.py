@@ -7,14 +7,17 @@ import numpy as np
 import time
 
 from logpolar.logPolarFunction import GenLogPolar
+
 global pos_x
 global pos_y
 global coordinates
 global test
 
+
 def pulsar():
-    print("introduce una tecla")
+    print("Pulsa intro:")
     input()
+
 
 def show_image(image, array_images, R, S):
     global pos_x
@@ -165,7 +168,7 @@ if __name__ == "__main__":
     images = dict()
     array_images = []
 
-    test=False
+    test = False
     for i in images_to_evaluate:
         show_image(i, array_images, 140, 175)
     cv2.destroyAllWindows()
